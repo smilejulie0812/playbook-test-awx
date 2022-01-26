@@ -1,0 +1,5 @@
+---
+- name: test ansible role options
+  hosts: all
+  roles:
+    - role: ./role
