@@ -1,0 +1,12 @@
+---
+# tasks file for test_role
+
+- name: create file A
+  include: fileA.yml
+  tags:
+    - file_a
+
+- name: create file B
+  include: fileB.yml
+  tags:
+    - file_b
