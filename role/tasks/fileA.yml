@@ -1,0 +1,27 @@
+---
+
+- name: touch file A
+  ansible.builtin.file:
+    path: /home/ubuntu/fileA.txt
+    state: touch
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'
+  tags: touch
+  notify: "check result list"
+
+- name: copy file A
+  ansible.builtin.copy:
+    src: /home/ubuntu/fileA.txt
+    dest: /home/ubuntu/fileA_2.txt
+  tags: copy
+  notify: "check result list"
+
+- name: remove file A
+  ansible.builtin.file:
+    path: /home/ubuntu/fileA.txt
+    state: absent
+  tags:
+    #- always
+    - never
+  notify: "check result list"
