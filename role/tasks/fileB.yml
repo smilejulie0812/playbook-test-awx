@@ -14,6 +14,7 @@
   ansible.builtin.copy:
     src: /home/ubuntu/fileB.txt
     dest: /home/ubuntu/fileB_2.txt
+    remote_src: yes
   tags: copy
   notify: "check result list"
 
