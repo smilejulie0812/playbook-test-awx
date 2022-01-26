@@ -1,0 +1,10 @@
+---
+# handlers file for test_role
+- name: check file list
+  shell: ls /home/ubuntu
+  register: result
+  listen: "check result list"
+
+- name: show file list
+  debug: var=result.stdout_lines
+  listen: "check result list"
