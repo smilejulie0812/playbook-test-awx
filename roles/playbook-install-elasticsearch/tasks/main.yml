@@ -1,0 +1,18 @@
+---
+# tasks file for install elasticsearch
+
+- name: install openjdk
+  include: openjdk.yml
+  tags: openjdk
+
+- name: install elasticsearch using package
+  include: install.yml
+  tags: install
+
+- name: setting elasticsearch files
+  include: settings.yml
+  tags: settings
+
+- name: start elasticsearch
+  include: start.yml
+  tags: start
