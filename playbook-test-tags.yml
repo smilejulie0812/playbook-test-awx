@@ -1,0 +1,5 @@
+---
+- name: test ansible tags options
+  hosts: all
+  roles:
+    - role: ./roles/playbook-test-tags
