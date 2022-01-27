@@ -1,0 +1,7 @@
+[mdinode]
+<IP address>
+<IP address>
+
+[mdinode:vars]
+ansible_ssh_user=<username>
+ansible_ssh_private_key_file=/home/ubuntu/<keyFileName>.pem
