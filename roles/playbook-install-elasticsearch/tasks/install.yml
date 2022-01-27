@@ -1,0 +1,22 @@
+---
+
+- name: send elasticsearch debian package file
+  ansible.builtin.copy:
+    src: /home/ubuntu/playbooks/roles/install-elasticsearch/files/elasticsearch-7.16.3-amd64.deb
+    dest: /home/ubuntu/elasticsearch-7.16.3-amd64.deb
+
+- name: send elasticsearch debian package checksum file
+  ansible.builtin.copy:
+    src: /home/ubuntu/playbooks/roles/install-elasticsearch/files/elasticsearch-7.16.3-amd64.deb.sha512
+    dest: /home/ubuntu/elasticsearch-7.16.3-amd64.deb.sha512
+
+- name: use sha512 to calculate checksum of elasticsearch file
+  ansible.builtin.stat:
+    path: /home/ubuntu/elasticsearch-7.16.3-amd64.deb.sha512
+    checksum_algorithm: sha512
+
+### checksum result debug task ###
+
+- name: install elasticsearch debian package file
+  apt:
+    deb: /home/ubuntu/elasticsearch-7.16.3-amd64.deb
