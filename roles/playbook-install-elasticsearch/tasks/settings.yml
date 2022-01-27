@@ -1,0 +1,20 @@
+---
+- name: copy configuration file
+  become: yes
+  ansible.builtin.template:
+    src: elasticsearch.yml.j2
+    dest: "/etc/elasticsearch/elasticsearch.yml"
+    owner: root
+    group: elasticsearch
+    mode: "660"
+    force: yes
+
+- name: copy jvm.options file
+  become: yes
+  ansible.builtin.template:
+    src: jvm.options.j2
+    dest: "/etc/elasticsearch/jvm.options"
+    owner: root
+    group: elasticsearch
+    mode: "660"
+    force: yes
