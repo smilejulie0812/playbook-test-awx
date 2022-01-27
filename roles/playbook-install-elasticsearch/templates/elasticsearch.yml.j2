@@ -71,12 +71,12 @@ transport.port: 9300
 # Pass an initial list of hosts to perform discovery when this node is started:
 # The default list of hosts is ["127.0.0.1", "[::1]"]
 #
-discovery.seed_hosts: [ {%- for nodeip in groups['masternode'] -%} {%- if loop.last -%} "{{ nodeip }}" {%- else -%} "{{ nodeip }}", {%- endif -%}{%- endfor -%} ]
+discovery.seed_hosts: [ {%- for nodeip in groups['mdinode'] -%} {%- if loop.last -%} "{{ nodeip }}" {%- else -%} "{{ nodeip }}", {%- endif -%}{%- endfor -%} ]
 
 #
 # Bootstrap the cluster using an initial set of master-eligible nodes:
 #
-cluster.initial_master_nodes: [ {%- for nodeip in groups['masternode'] -%} {%- if loop.last -%} "{{ nodeip }}" {%- else -%} "{{ nodeip }}", {%- endif -%}{%- endfor -%} ]
+cluster.initial_master_nodes: [ {%- for nodeip in groups['mdinode'] -%} {%- if loop.last -%} "{{ nodeip }}" {%- else -%} "{{ nodeip }}", {%- endif -%}{%- endfor -%} ]
 
 #
 # For more information, consult the discovery and cluster formation module documentation.
