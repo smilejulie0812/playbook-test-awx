@@ -2,13 +2,17 @@
 
 - name: send elasticsearch debian package file
   ansible.builtin.copy:
-    src: /var/lib/awx/projects/install_es_project/roles/install-elasticsearch/files/elasticsearch-7.16.3-amd64.deb
+    #src: /var/lib/awx/projects/install_es_project/roles/install-elasticsearch/files/elasticsearch-7.16.3-amd64.deb
+    src: /var/lib/awx/projects/_11__test_project/roles/playbook-install-elasticsearch/files/elasticsearch-7.16.3-amd64.deb
     dest: /home/ubuntu/elasticsearch-7.16.3-amd64.deb
+    remote_src: yes
 
 - name: send elasticsearch debian package checksum file
   ansible.builtin.copy:
-    src: /var/lib/awx/projects/install_es_project/roles/install-elasticsearch/files/elasticsearch-7.16.3-amd64.deb.sha512
+    #src: /var/lib/awx/projects/install_es_project/roles/install-elasticsearch/files/elasticsearch-7.16.3-amd64.deb.sha512
+    src: /var/lib/awx/projects/_11__test_project/roles/playbook-install-elasticsearch/files/elasticsearch-7.16.3-amd64.deb.sha512
     dest: /home/ubuntu/elasticsearch-7.16.3-amd64.deb.sha512
+    remote_src: yes
 
 - name: use sha512 to calculate checksum of elasticsearch file
   ansible.builtin.stat:
