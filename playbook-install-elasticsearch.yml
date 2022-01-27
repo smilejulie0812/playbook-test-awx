@@ -1,6 +1,6 @@
 ---
 - name: install elasticsearch
-  #hosts: all
+  hosts: all
   #become: yes
   roles:
     - role: ./roles/playbook-install-elasticsearch
