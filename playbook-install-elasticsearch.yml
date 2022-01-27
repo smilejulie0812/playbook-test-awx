@@ -4,4 +4,4 @@
   become: yes
 
   roles:
-    - role: ./roles/install-elasticsearch
+    - role: ./roles/playbook-install-elasticsearch
