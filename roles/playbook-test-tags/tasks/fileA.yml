@@ -25,4 +25,5 @@
   tags:
     #- always
     - never
+    - remove
   notify: "check result list"
